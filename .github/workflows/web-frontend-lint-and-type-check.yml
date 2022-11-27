@@ -1,0 +1,30 @@
+name: Lint, Type-check and Test
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  lint-type-test:
+    defaults:
+      run:
+        working-directory: ./web-frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "18.x"
+
+      - name: Installing my packages
+        run: npm ci
+
+      - name: Lint app
+        run: npm run lint
+      - name: Type-check app
+        run: npm run type-check
+      - name: Test
+        run: npm run test
