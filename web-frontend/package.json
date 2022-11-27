@@ -20,5 +20,12 @@
     "react-dom": "18.2.0",
     "typescript": "4.9.3",
     "yarn": "^1.22.19"
+  },
+  "pre-commit": [
+    "lint",
+    "type-check"
+  ],
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
   }
 }
