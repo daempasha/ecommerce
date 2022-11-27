@@ -1,11 +1,11 @@
-name: Lint and type-check
+name: Lint, Type-check and Test
 
 on:
   pull_request:
     branches: [main, develop]
 
 jobs:
-  lint-type-check:
+  lint-type-test:
     defaults:
       run:
         working-directory: ./web-frontend
@@ -26,3 +26,5 @@ jobs:
         run: npm run lint
       - name: Type-check app
         run: npm run type-check
+      - name: Test
+        run: npm run test
