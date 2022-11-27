@@ -25,4 +25,4 @@ jobs:
       - name: Lint app
         run: npm run lint
       - name: Type-check app
-        run: npm run lint
+        run: npm run type-check
